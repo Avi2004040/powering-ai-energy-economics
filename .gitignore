@@ -1,0 +1,9 @@
+﻿# Virtual environment - rebuilt from requirements.txt, never committed
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter checkpoint files
+.ipynb_checkpoints/
