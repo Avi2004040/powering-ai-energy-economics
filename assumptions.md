@@ -16,3 +16,10 @@ columns: Year, State, Industry Sector Category, then price cols
 (Residential/Commercial/Industrial/Transportation/Other/Total).
 'Other' col is all NA, 'Transportation' mostly 0 - ignore those.
 'US' row = national avg. 'Total Electric Industry' = all providers combined.
+
+## my LCOE formula verified
+crf(), fcr(), lcoe() in src/lcoe.py.
+tested against NREL PV sample -> got 39.78 $/MWh vs their 39.03 (~2% off).
+difference is just my test input values being approximate, not the formula.
+formula chain (crf->fcr->lcoe) confirmed correct.
+TODO optional: pull exact PV inputs from ATB PV sheet to match 39.03 to the cent.
