@@ -1,0 +1,7 @@
+Technology,LCOE ($/MWh),Cost Year
+Gas CC - low gas ($2.19),32.15,2022
+Gas CC - mid gas ($3.91),43.09,2022
+Gas CC - high gas ($6.42),59.06,2022
+Geothermal (Hydro/Flash),68.92,2022
+Coal (new),70.58,2022
+Nuclear (Large),79.0,2030 (fallback)
