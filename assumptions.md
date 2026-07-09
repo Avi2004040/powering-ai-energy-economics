@@ -49,4 +49,43 @@ geothermal: no fuel (earth's heat), CF from sheet (0.9), VOM=0.
 gas CC: CF=0.87 baseload assumption, 3 fuel scenarios.
 all: real WACC 4.1%, 30yr CRP, real 2022 $ (except nuclear = 2030 $).
 
+@"
 
+## Block 4 - 45Q carbon capture credit (policy inputs)
+source: One Big Beautiful Bill Act (OBBBA), signed July 4 2025; IRS 45Q.
+- point-source capture (power plant) + geologic storage = 85 USD/tonne CO2
+- DAC = 180 USD/tonne (not relevant to us - we're point-source)
+- inflation-adjusted from 2027, base year 2025 (we treat as flat real 2025 USD - simplification)
+- credit lasts 12 YEARS from plant startup, NOT the full 30yr life (important!)
+- OBBBA created storage/EOR parity (EOR now same value as permanent storage)
+
+how we use it: gas/coal + CCS captures CO2 -> earns 85 USD/tonne -> offsets LCOE.
+key question: does the 85 USD/ton credit make gas+CCS competitive vs plain gas?
+CAVEAT: CCS LCOE excludes CO2 transport & storage (T&S) cost - must note/bound it.
+"@ | Add-Content -Encoding utf8 assumptions.md
+
+## T&S cost — for sensitivity anaylsis
+CO2 transport + storage is very location-dependent.
+- median ~$1.94/t, range $0.78–$14.59 (CMU)
+- storage $1–3/t + transport $1–3/t = ~$2–6/t good sites (IEA GHG)
+- >200 Gt US capacity at <$8/t, but Northeast ~$40/t (NETL 2024)
+
+my sweep break-even ≈ $21/t. so:
+- good geology ($2–15) → CCS keeps its 45Q edge
+- bad geology (NE, $40+) → CCS loses
+so gas+CCS viability under 45Q is location-dependent, not yes/no.
+src: CMU CEIC paper; IEA GHG R&D; NETL Saline Storage Cost Model 2024
+
+
+## T&S cost - for the sensitivity sweep
+
+CO2 transport + storage is cheap but very location-dependent.
+- median ~1.94/t, range 0.78-14.59 (CMU)
+- storage 1-3/t + transport 1-3/t = ~2-6/t good sites (IEA GHG)
+- 200+ Gt US capacity at under 8/t, but Northeast ~40/t (NETL 2024)
+
+my sweep break-even ~21/t. so:
+- good geology (2-15) -> CCS keeps its 45Q edge
+- bad geology (NE, 40+) -> CCS loses
+so gas+CCS viability under 45Q is location-dependent, not yes/no.
+src: CMU CEIC paper; IEA GHG R&D; NETL Saline Storage Cost Model 2024
