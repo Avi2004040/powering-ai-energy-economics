@@ -89,3 +89,23 @@ my sweep break-even ~21/t. so:
 - bad geology (NE, 40+) -> CCS loses
 so gas+CCS viability under 45Q is location-dependent, not yes/no.
 src: CMU CEIC paper; IEA GHG R&D; NETL Saline Storage Cost Model 2024
+
+@"
+
+## AI gas-demand section
+AI data-center gas demand forecasts for 2030 (Bcf/day):
+- Enverus/EIR (Dec 2025): ~2.1 confident, up to 4.1 if all-gas
+- East Daley (2025): 4.2-6.1 base case
+- RBC (May 2026): ~6.1 (range 6-7)
+- S&P Global / EIA (2026): 3-6 base, up to 10-20 high end
+scenarios modeled: LOW 3, MID 6, HIGH 10 Bcf/d.
+
+model: AI burns gas year-round; during injection season (~214 days) that gas
+doesn't get stored -> storage shortfall -> price impact via the -0.54
+storage-price regression (slope -0.0021 USD/MMBtu per Bcf).
+result: +1.35 / +2.69 / +4.49 USD/MMBtu (unmitigated).
+
+CAVEAT: I realize this is an UPPER BOUND - linear extrapolation ignores supply response
+(higher price pulls in more production). EIA's supply-inclusive estimate is
+~+0.50 USD/MMBtu. Real impact is between; both agree direction & materiality.
+"@ | Add-Content -Encoding utf8 assumptions.md
